@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Portal Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 60px;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            height: calc(100vh - 100px);
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+        
+        .content h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        .logout-btn {
+            display: block;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+            
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employee Portal</h1>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 sidebar">
+                <h3>Navigator</h3>
+                <ul>
+                    <li><a href="#" onclick="changeContent('Dashboard')">Dashboard</a></li>
+                    <li><a href="#" onclick="changeContent('Leave Requests')">Leave Requests</a></li>
+                    <li><a href="#" onclick="changeContent('Tasks')">Tasks</a></li>
+                    <li><a href="#" onclick="changeContent('Notifications')">Notifications</a></li>
+                    <li><a href="#" onclick="changeContent('Salary')">Salary</a></li>
+                    <li><a href="#" onclick="changeContent('Performance Reviews')">Performance Reviews</a></li>
+                    <li><a href="#" onclick="changeContent('Training Programs')">Training Programs</a></li>
+                </ul>
+                <a href="#" class="logout-btn" onclick="logout()">Logout</a>
+            </div>
+
+            <div class="col-md-10 content">
+                <h2 id="page-title">Dashboard</h2>
+                <p>Welcome to the employee portal dashboard!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Employee Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Change content
+        
+        function changeContent(page) {
+          $('#page-title').text(page);
+          $('.content p').text('You are currently viewing the ' + page + ' page.');
+         }
+          
+          
+         // Logout functionality
+    function logout() {
+        // Perform logout logic here
+        alert('Logout clicked!');
+    }
+</script>
+
+</body>
+</html>
+
